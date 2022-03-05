@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<visualkeyboard>
+  <header>
+    <version>10.0</version>
+    <kbdname>vietnamese_ky_am</kbdname>
+    <flags>
+      <displayunderlying/>
+    </flags>
+  </header>
+  <encoding name="unicode" fontname="Noto Sans VN Tam Thu" fontsize="16">
+    <layer shift="S">
+      <key vkey="K_1">！</key>
+      <key vkey="K_QUOTE">【</key>
+      <key vkey="K_3">※</key>
+      <key vkey="K_4">₫</key>
+      <key vkey="K_COLON">：</key>
+      <key vkey="K_COMMA">〈</key>
+      <key vkey="K_PERIOD">〉</key>
+      <key vkey="K_SLASH">？</key>
+      <key vkey="K_C">ʈ</key>
+      <key vkey="K_F">ɯ</key>
+      <key vkey="K_LBRKT">『</key>
+      <key vkey="K_RBRKT">』</key>
+      <key vkey="K_Q">⺀</key>
+      <key vkey="K_Z">个</key>
+      <key vkey="K_X">ɷ</key>
+      <key vkey="K_S">ɹ</key>
+      <key vkey="K_R">ɵ</key>
+      <key vkey="K_W">ʅ</key>
+      <key vkey="K_T">ʆ</key>
+      <key vkey="K_P">ʃ</key>
+      <key vkey="K_J">ɽ</key>
+      <key vkey="K_N">ʇ</key>
+      <key vkey="K_M">ʄ</key>
+      <key vkey="K_K">ʋ</key>
+      <key vkey="K_6">･</key>
+      <key vkey="K_Y">ʊ</key>
+    </layer>
+    <layer shift="">
+      <key vkey="K_QUOTE">〝</key>
+      <key vkey="K_COMMA">、</key>
+      <key vkey="K_PERIOD">。</key>
+      <key vkey="K_COLON">;</key>
+      <key vkey="K_A">ʕ</key>
+      <key vkey="K_B">ɫ</key>
+      <key vkey="K_C">ɻ</key>
+      <key vkey="K_D">ɸ</key>
+      <key vkey="K_E">ʔ</key>
+      <key vkey="K_F">ɧ</key>
+      <key vkey="K_G">ʁ</key>
+      <key vkey="K_H">ʂ</key>
+      <key vkey="K_X">ɩ</key>
+      <key vkey="K_Z">ʅ</key>
+      <key vkey="K_W">ɮ</key>
+      <key vkey="K_V">ɰ</key>
+      <key vkey="K_N">ɳ</key>
+      <key vkey="K_M">ɭ</key>
+      <key vkey="K_LBRKT">「</key>
+      <key vkey="K_RBRKT">」</key>
+      <key vkey="K_J">ɪ</key>
+      <key vkey="K_K">ɾ</key>
+      <key vkey="K_L">ɴ</key>
+      <key vkey="K_P">ɬ</key>
+      <key vkey="K_O">ʗ</key>
+      <key vkey="K_I">ʍ</key>
+      <key vkey="K_U">ʏ</key>
+      <key vkey="K_Y">ɥ</key>
+      <key vkey="K_T">ɱ</key>
+      <key vkey="K_R">ɨ</key>
+      <key vkey="K_Q">々</key>
+      <key vkey="K_S">ɦ</key>
+      <key vkey="K_BKQUOTE">𡿨</key>
+    </layer>
+    <layer shift="CA">
+      <key vkey="K_QUOTE">〗</key>
+      <key vkey="K_COMMA">《</key>
+      <key vkey="K_PERIOD">》</key>
+      <key vkey="K_COLON">〖</key>
+      <key vkey="K_LBRKT">〔</key>
+      <key vkey="K_RBRKT">〕</key>
+    </layer>
+  </encoding>
+</visualkeyboard>

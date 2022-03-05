@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package>
+  <System>
+    <KeymanDeveloperVersion>14.0.286.0</KeymanDeveloperVersion>
+    <FileVersion>7.0</FileVersion>
+  </System>
+  <Options>
+    <ExecuteProgram></ExecuteProgram>
+    <ReadMeFile>readme.htm</ReadMeFile>
+    <GraphicFile>splash.bmp</GraphicFile>
+    <MSIFileName>C:\Users\vomin\Documents\Keyman Developer\Projects\keymandesktop.msi</MSIFileName>
+    <MSIOptions></MSIOptions>
+    <FollowKeyboardVersion/>
+  </Options>
+  <StartMenu>
+    <Folder></Folder>
+    <Items/>
+  </StartMenu>
+  <Info>
+    <Name URL="">Vietnamese Ky Am</Name>
+    <Copyright URL="">© 2022 Mike Vo</Copyright>
+    <Author URL="mailto:info@miketvo.com">Mike Vo</Author>
+    <Version URL=""></Version>
+    <WebSite URL="https://miketvo.com">https://miketvo.com</WebSite>
+  </Info>
+  <Files>
+    <File>
+      <Name>..\build\vietnamese_ky_am.kmx</Name>
+      <Description></Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kmx</FileType>
+    </File>
+    <File>
+      <Name>..\build\vietnamese_ky_am.js</Name>
+      <Description></Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.js</FileType>
+    </File>
+    <File>
+      <Name>..\build\vietnamese_ky_am.kvk</Name>
+      <Description></Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kvk</FileType>
+    </File>
+    <File>
+      <Name>readme.htm</Name>
+      <Description></Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.htm</FileType>
+    </File>
+    <File>
+      <Name>..\HISTORY.md</Name>
+      <Description>File HISTORY.md</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.md</FileType>
+    </File>
+    <File>
+      <Name>..\LICENSE.md</Name>
+      <Description>File LICENSE.md</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.md</FileType>
+    </File>
+    <File>
+      <Name>..\README.md</Name>
+      <Description>File README.md</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.md</FileType>
+    </File>
+    <File>
+      <Name>fonts\NotoSansVNTamThu-Regular.ttf</Name>
+      <Description>Font Noto Sans VN Tam Thu Regular</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ttf</FileType>
+    </File>
+    <File>
+      <Name>fonts\NotoSerifVNTamThu-Regular.ttf</Name>
+      <Description>Font Noto Serif VN Tam Thu Regular</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ttf</FileType>
+    </File>
+    <File>
+      <Name>fonts\TamThuKhaiHoanh-Regular.ttf</Name>
+      <Description>Font Tam Thu Khai Hoanh Regular</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ttf</FileType>
+    </File>
+    <File>
+      <Name>fonts\TamThuKhaiTung-Regular.ttf</Name>
+      <Description>Font Tam Thu Khai Tung Regular</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ttf</FileType>
+    </File>
+    <File>
+      <Name>splash.bmp</Name>
+      <Description>File splash.bmp</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.bmp</FileType>
+    </File>
+    <File>
+      <Name>vietnamese_ky_am.ico</Name>
+      <Description>File vietnamese_ky_am.ico</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ico</FileType>
+    </File>
+    <File>
+      <Name>welcome\kat-key.png</Name>
+      <Description>File kat-key.png</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.png</FileType>
+    </File>
+    <File>
+      <Name>welcome\keyboard_plan.png</Name>
+      <Description>File keyboard_plan.png</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.png</FileType>
+    </File>
+    <File>
+      <Name>welcome\welcome.htm</Name>
+      <Description>File welcome.htm</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.htm</FileType>
+    </File>
+  </Files>
+  <Keyboards>
+    <Keyboard>
+      <Name>Vietnamese Ky Am</Name>
+      <ID>vietnamese_ky_am</ID>
+      <Version>1.0</Version>
+      <Languages>
+        <Language ID="vi">Vietnamese</Language>
+      </Languages>
+    </Keyboard>
+  </Keyboards>
+  <Strings/>
+</Package>

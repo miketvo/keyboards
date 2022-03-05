@@ -1,0 +1,392 @@
+﻿c Vietnamese Ky Am Tu keyboard by Mike Vo
+
+c *******************************************************************
+c HEADERS
+c *******************************************************************
+store(&VERSION) '10.0'
+store(&BITMAP) 'vietnamese_ky_am.ico'
+store(&NAME) 'Vietnamese Ky Am'
+store(&COPYRIGHT) '© 2022 Mike Vo'
+store(&KEYBOARDVERSION) '1.0'
+store(&TARGETS) 'any'
+store(&VISUALKEYBOARD) 'vietnamese_ky_am.kvks'
+store(&LAYOUTFILE) 'vietnamese_ky_am.keyman-touch-layout'
+
+
+c *******************************************************************
+c CONSTANTS
+c *******************************************************************
+
+c Tone markers
+store(tone_ngang)       U+0265
+store(tone_sac)         U+0266
+store(tone_huyen)       U+0267
+store(tone_hoi)         U+0268
+store(tone_nga)         U+0269
+store(tone_nang)        U+026A
+
+c Initial consonants
+store(init_c_b)         U+026B
+store(init_c_p)         U+026C
+store(init_c_m)         U+026D
+store(init_c_w)         U+026E
+store(init_c_f)         U+026F
+store(init_c_v)         U+0270
+store(init_c_t)         U+0271
+store(init_c_th)        U+0272
+store(init_c_n)         U+0273
+store(init_c_l)         U+0274
+store(init_c_r)         U+0275
+store(init_c_dd)        U+0276
+store(init_c_x)         U+0277
+store(init_c_d)         U+0278
+store(init_c_s)         U+0279
+store(init_c_tr)        U+027A
+store(init_c_c)         U+027B
+store(init_c_nh)        U+027C
+store(init_c_j)         U+027D
+store(init_c_k)         U+027E
+store(init_c_ng)        U+027F
+store(init_c_kh)        U+0280
+store(init_c_g)         U+0281
+store(init_c_h)         U+0282
+
+c Final consonants & off-glide codas
+store(final_c_p)        U+0283
+store(final_c_m)        U+0284
+store(final_c_w)        U+0285
+store(final_c_t)        U+0286
+store(final_c_n)        U+0287
+store(final_c_c)        U+0288
+store(final_c_nh)       U+0289
+store(final_c_j)        U+028A
+store(final_c_k)        U+028B
+store(final_c_ng)       U+028C
+
+c Vowel nuclei
+store(vowel_i)          U+028D
+store(vowel_uw)         U+028E
+store(vowel_u)          U+028F
+store(vowel_ee)         U+0290
+store(vowel_ow)         U+0291
+store(vowel_aa)         U+0292
+store(vowel_oo)         U+0293
+store(vowel_e)          U+0294
+store(vowel_a)          U+0295
+store(vowel_aw)         U+0296
+store(vowel_o)          U+0297
+store(vowel_iq)         U+0298
+store(vowel_wq)         U+0299
+store(vowel_uq)         U+029A
+
+c Utilities
+store(sgl_quote)        U+0027
+store(tones)            'ɥɦɧɨɩɪ'
+store(vowels)           'ʍʎʏʐʑʒʓʔʕʖʗʘʙʚ'
+store(kat_codepoints)   U+0265 .. U+029A
+store(ascii_symbols)    '!?.,$¢₫£¥₩%*&#@'
+store(fw_symbols)       '？．，＄￠￡￥￦％＊＆＃＠･𡿨々个⺀'
+store(fw_chars)         '０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ'
+store(uni_latin)        '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzăâêôơưyAEIOUĂÂÊÔƠƯYáéíóúắấếốớứýÁÉÍÓÚẮẤẾỐỚỨÝàèìòùằầềồờừỳÀÈÌÒÙẰẦỀỒỜỪỲảẻỉỏủẳẩểổởửỷẢẺỈỎỦẲẨỂỔỞỬỶãẽĩõũẵẫễỗỡữỹÃẼĨÕŨẴẪỄỖỠỮỸạẹịọụặậệộợựỵẠẸỊỌỤẶẬỆỘỢỰỴ'
+
+
+c *******************************************************************
+begin Unicode > use(main)                  c Code execution entry point
+
+
+group(main) using keys
+    c Default behaviors
+    + [NCAPS CTRL ALT K_RBRKT] > '〕'
+    + [NCAPS CTRL ALT K_LBRKT] > '〔'
+    + [NCAPS SHIFT K_RBRKT] > '』'
+    + [NCAPS SHIFT K_LBRKT] > '『'
+    + [NCAPS K_RBRKT] > '」'
+    + [NCAPS K_LBRKT] > '「'
+    + [NCAPS SHIFT K_0] > '）'
+    + [NCAPS SHIFT K_9] > '（'
+    + [NCAPS SHIFT K_8] > '＊'
+    + [NCAPS SHIFT K_6] > '･'
+    + [NCAPS SHIFT K_4] > '₫'
+    + [NCAPS SHIFT K_3] > '※'
+    + [NCAPS SHIFT K_1] > '！'
+    + [NCAPS SHIFT K_SLASH] > '？'
+    + [NCAPS K_0] > '０'
+    + [NCAPS K_9] > '９'
+    + [NCAPS K_8] > '８'
+    + [NCAPS K_7] > '７'
+    + [NCAPS K_6] > '６'
+    + [NCAPS K_5] > '５'
+    + [NCAPS K_4] > '４'
+    + [NCAPS K_3] > '３'
+    + [NCAPS K_2] > '２'
+    + [NCAPS K_1] > '１'
+    + [NCAPS K_BKQUOTE] > '𡿨'
+    + [NCAPS SHIFT K_BKQUOTE] > '〜'
+    + [NCAPS K_PERIOD] > '。'
+    + [NCAPS K_COMMA] > '、'
+    + [NCAPS SHIFT K_PERIOD] > '〉'
+    + [NCAPS SHIFT K_COMMA] > '〈'
+    + [NCAPS CTRL ALT K_PERIOD] > '》'
+    + [NCAPS CTRL ALT K_COMMA] > '《'
+    + [NCAPS K_COLON] > '；'
+    + [NCAPS SHIFT K_COLON] > '：'
+    + [NCAPS K_QUOTE] > '〝'
+    '〝' + [NCAPS K_QUOTE] > '〝〟'
+    any(kat_codepoints) + [NCAPS K_QUOTE] > index(kat_codepoints, 1) '〟'
+    any(ascii_symbols) + [NCAPS K_QUOTE] > index(ascii_symbols, 1) '〟'
+    any(fw_symbols) + [NCAPS K_QUOTE] > index(fw_symbols, 1) '〟'
+    any(fw_chars) + [NCAPS K_QUOTE] > index(fw_chars, 1) '〟'
+    any(uni_latin) + [NCAPS K_QUOTE] > index(uni_latin, 1) '〟'
+    + [NCAPS SHIFT K_QUOTE] > '【'
+    '【' + [NCAPS SHIFT K_QUOTE] > '【】'
+    any(kat_codepoints) + [NCAPS SHIFT K_QUOTE] > index(kat_codepoints, 1) '】'
+    any(ascii_symbols) + [NCAPS SHIFT K_QUOTE] > index(ascii_symbols, 1) '】'
+    any(fw_symbols) + [NCAPS SHIFT K_QUOTE] > index(fw_symbols, 1) '】'
+    any(fw_chars) + [NCAPS SHIFT K_QUOTE] > index(fw_chars, 1) '】'
+    any(uni_latin) + [NCAPS SHIFT K_QUOTE] > index(uni_latin, 1) '】'
+    + [NCAPS CTRL ALT K_QUOTE] > '〖'
+    '〖' + [NCAPS CTRL ALT K_QUOTE] > '〖〗'
+    any(kat_codepoints) + [NCAPS CTRL ALT K_QUOTE] > index(kat_codepoints, 1) '〗'
+    any(ascii_symbols) + [NCAPS CTRL ALT K_QUOTE] > index(ascii_symbols, 1) '〗'
+    any(fw_symbols) + [NCAPS CTRL ALT K_QUOTE] > index(fw_symbols, 1) '〗'
+    any(fw_chars) + [NCAPS CTRL ALT K_QUOTE] > index(fw_chars, 1) '〗'
+    any(uni_latin) + [NCAPS CTRL ALT K_QUOTE] > index(uni_latin, 1) '〗'
+    + [K_SPACE] > ' '
+    + [NCAPS K_Q] > '々'
+    + [NCAPS SHIFT K_Q] > '⺀'
+    + [NCAPS SHIFT K_Z] > '个'
+
+    c CAPSLOCK behaviors
+    + [CAPS SHIFT K_RBRKT] > '}'
+    + [CAPS SHIFT K_LBRKT] > '{'
+    + [CAPS K_RBRKT] > ']'
+    + [CAPS K_LBRKT] > '['
+    + [CAPS SHIFT K_0] > ')'
+    + [CAPS SHIFT K_9] > '('
+    + [CAPS SHIFT K_8] > '*'
+    + [CAPS SHIFT K_6] > '^'
+    + [CAPS SHIFT K_4] > '$'
+    + [CAPS SHIFT K_3] > '#'
+    + [CAPS SHIFT K_1] > '!'
+    + [CAPS SHIFT K_SLASH] > '?'
+    + [CAPS K_0] > '0'
+    + [CAPS K_9] > '9'
+    + [CAPS K_8] > '8'
+    + [CAPS K_7] > '7'
+    + [CAPS K_6] > '6'
+    + [CAPS K_5] > '5'
+    + [CAPS K_4] > '4'
+    + [CAPS K_3] > '3'
+    + [CAPS K_2] > '2'
+    + [CAPS K_1] > '1'
+    + [CAPS K_QUOTE] > $sgl_quote
+    + [CAPS K_BKQUOTE] > '`'
+    + [CAPS SHIFT K_BKQUOTE] > '~'
+    + [CAPS K_PERIOD] > '.'
+    + [CAPS K_COMMA] > ','
+    + [CAPS SHIFT K_PERIOD] > '>'
+    + [CAPS SHIFT K_COMMA] > '<'
+    + [CAPS K_Q] > 'q'
+    + [CAPS K_W] > 'w'
+    + [CAPS K_E] > 'e'
+    + [CAPS K_R] > 'r'
+    + [CAPS K_T] > 't'
+    + [CAPS K_Y] > 'y'
+    + [CAPS K_U] > 'u'
+    + [CAPS K_I] > 'i'
+    + [CAPS K_O] > 'o'
+    + [CAPS K_P] > 'p'
+    + [CAPS K_A] > 'a'
+    + [CAPS K_S] > 's'
+    + [CAPS K_D] > 'd'
+    + [CAPS K_F] > 'f'
+    + [CAPS K_G] > 'g'
+    + [CAPS K_H] > 'h'
+    + [CAPS K_J] > 'j'
+    + [CAPS K_K] > 'k'
+    + [CAPS K_L] > 'l'
+    + [CAPS K_Z] > 'z'
+    + [CAPS K_X] > 'x'
+    + [CAPS K_C] > 'c'
+    + [CAPS K_V] > 'v'
+    + [CAPS K_B] > 'b'
+    + [CAPS K_N] > 'n'
+    + [CAPS K_M] > 'm'
+    + [CAPS SHIFT K_Q] > 'Q'
+    + [CAPS SHIFT K_W] > 'W'
+    + [CAPS SHIFT K_E] > 'E'
+    + [CAPS SHIFT K_R] > 'R'
+    + [CAPS SHIFT K_T] > 'T'
+    + [CAPS SHIFT K_Y] > 'Y'
+    + [CAPS SHIFT K_U] > 'U'
+    + [CAPS SHIFT K_I] > 'I'
+    + [CAPS SHIFT K_O] > 'O'
+    + [CAPS SHIFT K_P] > 'P'
+    + [CAPS SHIFT K_A] > 'A'
+    + [CAPS SHIFT K_S] > 'S'
+    + [CAPS SHIFT K_D] > 'D'
+    + [CAPS SHIFT K_F] > 'F'
+    + [CAPS SHIFT K_G] > 'G'
+    + [CAPS SHIFT K_H] > 'H'
+    + [CAPS SHIFT K_J] > 'J'
+    + [CAPS SHIFT K_K] > 'K'
+    + [CAPS SHIFT K_L] > 'L'
+    + [CAPS SHIFT K_Z] > 'Z'
+    + [CAPS SHIFT K_X] > 'X'
+    + [CAPS SHIFT K_C] > 'C'
+    + [CAPS SHIFT K_V] > 'V'
+    + [CAPS SHIFT K_B] > 'B'
+    + [CAPS SHIFT K_N] > 'N'
+    + [CAPS SHIFT K_M] > 'M'
+
+    c Advanced full-width Latin input
+    + [CAPS CTRL ALT K_Q] > 'ｑ'
+    + [CAPS CTRL ALT K_W] > 'ｗ'
+    + [CAPS CTRL ALT K_E] > 'ｅ'
+    + [CAPS CTRL ALT K_R] > 'ｒ'
+    + [CAPS CTRL ALT K_T] > 'ｔ'
+    + [CAPS CTRL ALT K_Y] > 'ｙ'
+    + [CAPS CTRL ALT K_U] > 'ｕ'
+    + [CAPS CTRL ALT K_I] > 'ｉ'
+    + [CAPS CTRL ALT K_O] > 'ｏ'
+    + [CAPS CTRL ALT K_P] > 'ｐ'
+    + [CAPS CTRL ALT K_A] > 'ａ'
+    + [CAPS CTRL ALT K_S] > 'ｓ'
+    + [CAPS CTRL ALT K_D] > 'ｄ'
+    + [CAPS CTRL ALT K_F] > 'ｆ'
+    + [CAPS CTRL ALT K_G] > 'ｇ'
+    + [CAPS CTRL ALT K_H] > 'ｈ'
+    + [CAPS CTRL ALT K_J] > 'ｊ'
+    + [CAPS CTRL ALT K_K] > 'ｋ'
+    + [CAPS CTRL ALT K_L] > 'ｌ'
+    + [CAPS CTRL ALT K_Z] > 'ｚ'
+    + [CAPS CTRL ALT K_X] > 'ｘ'
+    + [CAPS CTRL ALT K_C] > 'ｃ'
+    + [CAPS CTRL ALT K_V] > 'ｖ'
+    + [CAPS CTRL ALT K_B] > 'ｂ'
+    + [CAPS CTRL ALT K_N] > 'ｎ'
+    + [CAPS CTRL ALT K_M] > 'ｍ'
+    + [CAPS SHIFT CTRL ALT K_Q] > 'Ｑ'
+    + [CAPS SHIFT CTRL ALT K_W] > 'Ｗ'
+    + [CAPS SHIFT CTRL ALT K_E] > 'Ｅ'
+    + [CAPS SHIFT CTRL ALT K_R] > 'Ｒ'
+    + [CAPS SHIFT CTRL ALT K_T] > 'Ｔ'
+    + [CAPS SHIFT CTRL ALT K_Y] > 'Ｙ'
+    + [CAPS SHIFT CTRL ALT K_U] > 'Ｕ'
+    + [CAPS SHIFT CTRL ALT K_I] > 'Ｉ'
+    + [CAPS SHIFT CTRL ALT K_O] > 'Ｏ'
+    + [CAPS SHIFT CTRL ALT K_P] > 'Ｐ'
+    + [CAPS SHIFT CTRL ALT K_A] > 'Ａ'
+    + [CAPS SHIFT CTRL ALT K_S] > 'Ｓ'
+    + [CAPS SHIFT CTRL ALT K_D] > 'Ｄ'
+    + [CAPS SHIFT CTRL ALT K_F] > 'Ｆ'
+    + [CAPS SHIFT CTRL ALT K_G] > 'Ｇ'
+    + [CAPS SHIFT CTRL ALT K_H] > 'Ｈ'
+    + [CAPS SHIFT CTRL ALT K_J] > 'Ｊ'
+    + [CAPS SHIFT CTRL ALT K_K] > 'Ｋ'
+    + [CAPS SHIFT CTRL ALT K_L] > 'Ｌ'
+    + [CAPS SHIFT CTRL ALT K_Z] > 'Ｚ'
+    + [CAPS SHIFT CTRL ALT K_X] > 'Ｘ'
+    + [CAPS SHIFT CTRL ALT K_C] > 'Ｃ'
+    + [CAPS SHIFT CTRL ALT K_V] > 'Ｖ'
+    + [CAPS SHIFT CTRL ALT K_B] > 'Ｂ'
+    + [CAPS SHIFT CTRL ALT K_N] > 'Ｎ'
+    + [CAPS SHIFT CTRL ALT K_M] > 'Ｍ'
+
+    c Tone input
+    + [NCAPS K_Y] > $tone_ngang
+    + [NCAPS K_S] > $tone_sac
+    + [NCAPS K_F] > $tone_huyen
+    + [NCAPS K_R] > $tone_hoi
+    + [NCAPS K_X] > $tone_nga
+    + [NCAPS K_J] > $tone_nang
+
+    c Vowel input
+    + [NCAPS K_O] > $vowel_o
+    $vowel_o + [NCAPS K_O] > $vowel_oo
+    $vowel_o + [NCAPS K_W] > $vowel_ow
+    + [NCAPS K_A] > $vowel_a
+    $vowel_a + [NCAPS K_A] > $vowel_aa
+    $vowel_a + [NCAPS K_W] > $vowel_aw
+    + [NCAPS K_E] > $vowel_e
+    $vowel_e + [NCAPS K_E] > $vowel_ee
+    + [NCAPS K_U] > $vowel_u
+    $vowel_u + [NCAPS K_W] > $vowel_uw
+    $vowel_u + [NCAPS K_Q] > $vowel_uq
+    $vowel_uw + [NCAPS K_Q] > $vowel_wq
+    $init_c_w + [NCAPS K_Q] > $vowel_wq
+    + [NCAPS K_I] > $vowel_i
+    $vowel_i + [NCAPS K_Q] > $vowel_iq
+
+    c Initial consonant input (direct)
+    + [NCAPS SHIFT K_S] > $init_c_s
+    + [NCAPS SHIFT K_F] > $init_c_f
+    + [NCAPS SHIFT K_R] > $init_c_r
+    + [NCAPS SHIFT K_X] > $init_c_x
+    + [NCAPS SHIFT K_J] > $init_c_j
+
+    c Initial consonant input (context-dependent)
+    + [NCAPS K_H] > $init_c_h
+    + [NCAPS K_G] > $init_c_g
+    + [NCAPS K_K] > $init_c_k
+    any(tones) + [NCAPS K_J] > context(1) $init_c_j
+    $init_c_k + [NCAPS K_H] > $init_c_kh
+    + [NCAPS K_C] > $init_c_c
+    any(tones) + [NCAPS K_S] > context(1) $init_c_s
+    + [NCAPS K_D] > $init_c_d
+    $init_c_d + [NCAPS K_D] > $init_c_dd
+    any(tones) + [NCAPS K_X] > context(1) $init_c_x
+    any(tones) + [NCAPS K_R] > context(1) $init_c_r
+    + [NCAPS K_L] > $init_c_l
+    + [NCAPS K_N] > $init_c_n
+    $init_c_n + [NCAPS K_H] > $init_c_nh
+    $init_c_n + [NCAPS K_G] > $init_c_ng
+    + [NCAPS K_T] > $init_c_t
+    $init_c_t + [NCAPS K_H] > $init_c_th
+    $init_c_t + [NCAPS K_R] > $init_c_tr
+    + [NCAPS K_V] > $init_c_v
+    any(tones) + [NCAPS K_F] > context(1) $init_c_f
+    + [NCAPS K_W] > $init_c_w
+    + [NCAPS K_M] > $init_c_m
+    + [NCAPS K_P] > $init_c_p
+    $init_c_p + [NCAPS K_H] > $init_c_f
+    + [NCAPS K_B] > $init_c_b
+
+    c Final consonant input (direct)
+    + [NCAPS K_Z] > $final_c_w
+    + [NCAPS SHIFT K_W] > $final_c_w
+    + [NCAPS SHIFT K_K] > $final_c_k
+    + [NCAPS SHIFT K_J] > $final_c_j
+    + [NCAPS SHIFT K_C] > $final_c_c
+    + [NCAPS SHIFT K_N] > $final_c_n
+    + [NCAPS SHIFT K_T] > $final_c_t
+    + [NCAPS SHIFT K_M] > $final_c_m
+    + [NCAPS SHIFT K_P] > $final_c_p
+    + [NCAPS SHIFT K_Y] > $final_c_j
+
+    c Final consonant input (context-dependent)
+    any(vowels) + [NCAPS K_Z] > context(1) $final_c_w
+    any(vowels) + [NCAPS K_K] > context(1) $final_c_k
+    any(vowels) + [NCAPS K_J] > context(1) $final_c_j
+    any(vowels) + [NCAPS K_C] > context(1) $final_c_c
+    any(vowels) + [NCAPS K_N] > context(1) $final_c_n
+    $final_c_n + [NCAPS SHIFT K_H] > $final_c_nh
+    $final_c_n + [NCAPS SHIFT K_G] > $final_c_ng
+    $final_c_n + [NCAPS K_H] > $final_c_nh
+    $final_c_n + [NCAPS K_G] > $final_c_ng
+    any(vowels) + [NCAPS K_T] > context(1) $final_c_t
+    any(vowels) + [NCAPS K_M] > context(1) $final_c_m
+    any(vowels) + [NCAPS K_P] > context(1) $final_c_p
+
+    c Guard against incorrect final consonants and shift + vowels
+    + [NCAPS SHIFT K_H] > nul beep
+    + [NCAPS SHIFT K_G] > nul beep
+    + [NCAPS SHIFT K_D] > nul beep
+    + [NCAPS SHIFT K_L] > nul beep
+    + [NCAPS SHIFT K_V] > nul beep
+    + [NCAPS SHIFT K_B] > nul beep
+    + [NCAPS SHIFT K_O] > nul beep
+    + [NCAPS SHIFT K_A] > nul beep
+    + [NCAPS SHIFT K_E] > nul beep
+    + [NCAPS SHIFT K_U] > nul beep
+    + [NCAPS SHIFT K_I] > nul beep
