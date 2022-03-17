@@ -1,7 +1,9 @@
 <?php 
   $pagename = 'Vietnamese Ky Am Keyboard Help';
   $pagetitle = $pagename;
-  $style = '
+  require_once('header.php');
+?>
+  <style>
     @font-face {
       font-family: "Noto Serif VN Tam Thu";
       src: url(./fonts/NotoSerifVNTamThu-Regular.ttf);
@@ -42,10 +44,8 @@
       font-family: "Noto Serif VN Tam Thu";
       font-size: 14pt;
     }
-  '
-?>
-
-<h1>Start Using Vietnamese Ky Am keyboard</h1>
+  </style>
+</head>
 
 <p>
   Because of the complex nature of Ky Am Tu, this keyboard maps each Ky Am Tu glyph to either one single keystroke or a key sequence (consecutive keystrokes). The layout and sequences used for this keyboard is heavily influenced by <a href="https://en.wikipedia.org/wiki/Telex_(input_method)">Vietnamese Telex</a>. The tables below contain all key / key sequences for this keyboard. 
